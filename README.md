@@ -2,7 +2,7 @@
 
 * <a href="https://hisamikurita.github.io/butterfly/dist/">DEMO</a>
 
-![スクリーンショット (138)](https://user-images.githubusercontent.com/47776346/77818441-95d15f80-7115-11ea-92b7-475fc57708fa.png)
+![screenshot](https://user-images.githubusercontent.com/47776346/82429176-7841c600-9ac6-11ea-95a6-a70ab695a1c7.png)
 
 ## Usage
 * Clone repository<br>
