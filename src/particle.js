@@ -1,7 +1,7 @@
 import { Utils } from './util';
 
 const mouse = {};
-const colors = ['#645f5a'];
+const colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
 
 window.addEventListener('mousemove', function (event) {
   mouse.x = event.clientX;
@@ -19,7 +19,7 @@ export class Particle {
     this.y2 = y;
     this.vx = 0;
     this.vy = 0;
-    this.radius = Math.random() * 2.5 + 1;
+    this.radius = Math.random() * 2.5 + 2;
     this.friction = Math.random() * 0.05 + 0.94;
     this.speed = 20;
   }

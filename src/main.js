@@ -39,21 +39,25 @@ import { Utils } from './util';
         offscreencanvas.width = WIDTH;
         offscreencanvas.height = HEIGHT;
 
-        offscreenctx.drawImage('../dist/images/img.png', WIDTH / 2, HEIGHT / 2);
-        const imgData = offscreenctx.getImageData(0, 0, WIDTH, HEIGHT).data;
+        const img = new Image();
+        img.src = './images/img.png';
 
-        canvas.width = WIDTH;
-        canvas.height = HEIGHT;
+        img.addEventListener('load', () => {
+            offscreenctx.drawImage(img, (WIDTH - img.width) / 2, (HEIGHT - img.height) / 2);
+            const imgData = offscreenctx.getImageData(0, 0, WIDTH, HEIGHT).data;
+            canvas.width = WIDTH;
+            canvas.height = HEIGHT;
 
-        const skip = 150;
-        for (let x = 0; x < WIDTH; x += Math.round(WIDTH / skip)) {
-            for (let y = 0; y < HEIGHT; y += Math.round(WIDTH / skip)) {
-                if (imgData[((x + y * WIDTH) * 4) + 3] > skip) {
-                    particles.push(new Particle(x, y));
+            const skip = 140;
+            for (let x = 0; x < WIDTH; x += Math.round(WIDTH / skip)) {
+                for (let y = 0; y < HEIGHT; y += Math.round(WIDTH / skip)) {
+                    if (imgData[((x + y * WIDTH) * 4) + 3] > skip) {
+                        particles.push(new Particle(x, y));
+                    }
                 }
             }
-        }
-        amount = particles.length;
+            amount = particles.length;
+        })
     }
 
     function render() {
